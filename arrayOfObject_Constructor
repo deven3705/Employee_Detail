@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+public:
+string name,ch;
+int age;
+long int salary;
+employee() {
+        salary = 25000;
+    }
+
+void getdetails();
+void putdetails();
+};
+
+void employee::getdetails()
+{
+cout << "Enter name : ";
+cin >> name ;
+cout << "ENTER AGE: ";
+cin >> age;
+cout << "do you want salary (yes/no) : ";
+cin >> ch;
+if(ch == "yes" || ch == "YES")
+{
+employee();
+}
+else{
+    salary = 0;
+}
+}
+
+void employee::putdetails()
+{
+cout << name << "  ";
+cout << age << "  ";
+cout << salary << "  ";
+cout << endl;
+}
+
+int main()
+{
+employee e[100];
+int i,emp;
+
+cout << "ENter number of employees: ";
+cin >> emp;
+
+    for(i = 0; i < emp; i++){
+        e[i].getdetails();
+    }
+   
+   cout << "\nDetails of employees - " << endl;
+    
+   cout << "Name" << " " << "Age" << " " << "Salary\n"; 
+    for(i = 0; i < emp; i++){
+        e[i].putdetails();
+    }
+
+return 0;
+}
